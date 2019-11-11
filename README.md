@@ -10,6 +10,7 @@ conda activate ADR-demo
 ## Installeren tflite via wheel bestand
 https://www.tensorflow.org/lite/guide/python.
 Kies de Python 3.7 versie die bij jouw systeem hoort.
+eventueel installeren met python3.7 -m pip install wheelbestand
 
 ## Downloaden model
 Download van de flashblade (lars_data/adr/ADRmodel.tflite) of vraag aan Lars. Zet het in deze map
