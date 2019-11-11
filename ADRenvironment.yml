@@ -1,4 +1,4 @@
-name: test_overdrive
+name: ADR-demo
 channels:
   - defaults
 dependencies:
