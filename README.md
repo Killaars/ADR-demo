@@ -24,6 +24,7 @@ Auto's gaan rijden en webcamscherm opent. Indien auto's met meer dan 90% zekerhe
 ## Open streamlit in de andere tab
 streamlit run ADRstreamlit.py
 Eventueel latlon coordinaten aanpassen als demo niet in Utrecht gedraaid wordt.
+werkt het beste in firefox merk ik
 
 ## Opbouwen racebaan
 Maak een 'ovaal' van 2x 2 rechte stukken afgewisseld door 2x 2 bochten aan elkaar. Rondje begint met recht stuk 34 (start/finish), daarna recht stuk 39, 2x bocht 20, recht stuk 36, recht stuk 40 en 2 bochten 18. Brug met webcam op het einde van de laatste bocht 20 en het begin van rechte stuk 36. Webcam gericht op het rechte stuk. Auto's in dezelfde richting laten rijden als hierboven beschreven. 

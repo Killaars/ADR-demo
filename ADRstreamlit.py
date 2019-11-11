@@ -89,36 +89,22 @@ st.deck_gl_chart(
 
 #%%
 #############%% Plotting - linechart
-# Lat lon selectie eigenlijk met klikken op kaart...
-lat = data.loc[data.first_valid_index(),'lat']
-lon = data.loc[data.first_valid_index(),'lon']
-
-#timeseries_to_plot = data[(data['lat']==lat)&(data['lon']==lon)]
-
-# Of met keuzemenu
-latoptions = st.multiselect(
-    'Kies een weg',
-    data['road'].unique())
-if len(latoptions)>0:
-    timeseries_to_plot = data[data['road'].isin(latoptions)]
-else:
-    timeseries_to_plot = data
-
-# Kies uit uren of dagen
-groupmode = st.sidebar.radio('Kies uren of dagen',('Uren','Dagen'))
-
-if groupmode=='Uren':
-    timeseries_to_plot.loc[:,'timestamp'] = timeseries_to_plot['timestamp'].apply(lambda dt: datetime.datetime(dt.year, dt.month, dt.day, dt.hour))
-    
-if groupmode=='Dagen':
-    timeseries_to_plot.loc[:,'timestamp'] = timeseries_to_plot['timestamp'].apply(lambda dt: datetime.datetime(dt.year, dt.month, dt.day))
+## Kies uit uren of dagen
+#groupmode = st.sidebar.radio('Kies uren of dagen',('Uren','Dagen'))
+#
+#if groupmode=='Uren':
+#    timeseries_to_plot.loc[:,'timestamp'] = timeseries_to_plot['timestamp'].apply(lambda dt: datetime.datetime(dt.year, dt.month, dt.day, dt.hour))
+#    
+#if groupmode=='Dagen':
+#    timeseries_to_plot.loc[:,'timestamp'] = timeseries_to_plot['timestamp'].apply(lambda dt: datetime.datetime(dt.year, dt.month, dt.day))
 
 # Maak 1-hot zodat elke code een bar krijgt
-timeseries_to_plot = timeseries_to_plot[['gevi','timestamp']]
-timeseries_to_plot=pd.get_dummies(timeseries_to_plot)
+timeseries_to_plot = data[['gevi','road']]
+timeseries_to_plot = pd.get_dummies(timeseries_to_plot['gevi'])
+timeseries_to_plot['road'] = data['road']
 
 # Grouperen op timestamp 
-timeseries_to_plot = timeseries_to_plot.groupby(timeseries_to_plot['timestamp']).sum()
+timeseries_to_plot = timeseries_to_plot.groupby(timeseries_to_plot['road']).sum()
 timeseries_to_plot.index.names = ['index']
 #timeseries_to_plot['gevi'] = np.arange(len(timeseries_to_plot))
 st.bar_chart(timeseries_to_plot)
