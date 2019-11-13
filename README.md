@@ -19,11 +19,11 @@
 ### Open nieuwe tab met dezelfde environment
 
 ### Draai herkenningsmodel
-`python ADRmodel.py --model ADRmodel.tflite --labels ADRlabels.txt --output ADRoutput.csv`
+* `python ADRmodel.py --model ADRmodel.tflite --labels ADRlabels.txt --output ADRoutput.csv`
 * Auto's gaan rijden en webcamscherm opent. Indien auto's met meer dan 90% zekerheid herkent worden, worden de resultaten in ADRoutput.csv weggeschreven en gevisualiseerd in het streamlit dashboard.
 
 ### Open streamlit in de andere tab
-`streamlit run ADRstreamlit.py`
+* `streamlit run ADRstreamlit.py`
 * Eventueel latlon coordinaten aanpassen als demo niet in Utrecht gedraaid wordt.
 * werkt het beste in firefox merk ik
 
