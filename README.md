@@ -8,10 +8,15 @@
 * `conda activate ADR-demo`
 
 ### Installeren tflite via wheel bestand
+* Indien je op linux x86_64 draait kan je dit overslaan
 * https://www.tensorflow.org/lite/guide/python.
 * Kies de Python 3.7 versie die bij jouw systeem hoort.
 * eventueel installeren met:
 * `python3.7 -m pip install wheelbestand`
+
+### Installeren Blueby
+* sudo apt-get install python3-pip libglib2.0-dev
+* python3.7 -m pip install bluepy --user
 
 ### Downloaden model
 * Download van de flashblade (lars_data/adr/ADRmodel.tflite) of vraag aan Lars. Zet het in deze map
