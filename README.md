@@ -14,12 +14,13 @@
 * eventueel installeren met:
 * `python3.7 -m pip install wheelbestand`
 
-### Installeren Blueby
+### Installeren Bluepy
 * sudo apt-get install python3-pip libglib2.0-dev
 * python3.7 -m pip install bluepy --user
 
 ### Downloaden model
 * Download van de flashblade (lars_data/adr/ADRmodel.tflite) of vraag aan Lars. Zet het in deze map
+* Kleiner testmodel (mobilenet2.tflite) zit in de repository
 
 ### Open nieuwe tab met dezelfde environment
 
