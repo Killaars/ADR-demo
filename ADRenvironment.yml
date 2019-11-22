@@ -11,5 +11,5 @@ dependencies:
   - tensorflow==1.14.0
   - pip:
     - opencv-python
-    - bluepy
+    - streamlit
     - whl/tflite_runtime-1.14.0-cp37-cp37m-linux_x86_64.whl

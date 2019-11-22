@@ -1,11 +1,15 @@
 # Git voor de racebaandemo
 * Herkent automatisch 4 gevaarlijke stoffen stickers die achterop ANKI overdrive autos geplakt zijn en vat de resultaten samen in een streamlit dashboard.
 
+### Git clone
+* `git clone git@git.intranet.rws.nl:Datalab/workshops/tutorials/racebaan_adr.git`
+* `cd racebaan_adr`
+
 ### Bouwen Conda environment met de .yml file
 * `conda env create -f ADRenvironment.yml`
 
 ### Activeer environment
-* `conda activate ADR-demo`
+* `conda activate ADRdemo`
 
 ### Installeren tflite via wheel bestand
 * Indien je op linux x86_64 draait kan je dit overslaan
