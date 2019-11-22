@@ -19,18 +19,22 @@
 * `python3.7 -m pip install wheelbestand`
 
 ### Installeren Bluepy
-* sudo apt-get install python3-pip libglib2.0-dev
-* python3.7 -m pip install bluepy --user
+* `sudo apt-get install python3-pip libglib2.0-dev`
+* `python3.7 -m pip install bluepy --user`
 
-### Downloaden model
-* Download van de flashblade (lars_data/adr/ADRmodel.tflite) of vraag aan Lars. Zet het in deze map
-* Kleiner testmodel (mobilenet2.tflite) zit in de repository
-
-### Open nieuwe tab met dezelfde environment
+### Open nieuwe tab/terminal met dezelfde environment
+* in nieuwe tab/terminal:
+* `conda activate ADRdemo`
 
 ### Draai herkenningsmodel
-* `python ADRmodel.py --model ADRmodel.tflite --labels ADRlabels.txt --output ADRoutput.csv`
+* `python ADRmodel.py --model ADRmodel.tflite --labels ADRlabels.txt --output ADRoutput.csv --mode ADR`
 * Auto's gaan rijden en webcamscherm opent. Indien auto's met meer dan 90% zekerheid herkent worden, worden de resultaten in ADRoutput.csv weggeschreven en gevisualiseerd in het streamlit dashboard.
+
+### Of draai object herkenningsmodel
+*`python ADRmodel.py --model ADRmodel.tflite --labels ADRlabels.txt --output ADRoutput.csv --mode object`
+
+### Eventueel inputspeed aanpassen met --input_speed XXX
+* XXX is een integer tussen de 200 en 800. Regelt de snelheid van de auto's
 
 ### Open streamlit in de andere tab
 * `streamlit run ADRstreamlit.py`
