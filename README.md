@@ -1,52 +1,45 @@
-# Git voor de racebaandemo
-* Herkent automatisch 4 gevaarlijke stoffen stickers die achterop ANKI overdrive autos geplakt zijn en vat de resultaten samen in een streamlit dashboard.
+# Git of the racetrackdemo
+* Recognizes 4 signs of dangerous chemicals that are located on the rear of ANKI overdrive cars. Presents the results in a streamlit dashboard
 
 ### Git clone
 * `git clone git@git.intranet.rws.nl:Datalab/workshops/tutorials/racebaan_adr.git`
 * `cd racebaan_adr`
 
-### Bouwen Conda environment met de .yml file
+### Build Conda environment from .yml file
 * `conda env create -f ADRenvironment.yml`
 
-### Activeer environment
+### Activate environment
 * `conda activate ADRdemo`
 
-### Installeren tflite via wheel bestand
-* Indien je op linux x86_64 draait kan je dit overslaan
+### Install tflite using wheel file
+* You can skip this step if cloning on Linux x86_64 
 * https://www.tensorflow.org/lite/guide/python.
-* Kies de Python 3.7 versie die bij jouw systeem hoort.
-* eventueel installeren met:
+* Choose Python 3.7 version that matches your system
+* Install with:
 * `python3.7 -m pip install wheelbestand`
 
-### Installeren Bluepy
+### Install Bluepy
 * `sudo apt-get install python3-pip libglib2.0-dev`
 * `python3.7 -m pip install bluepy --user`
 
-### Open nieuwe tab/terminal met dezelfde environment
-* in nieuwe tab/terminal:
+### Open new tab/terminal with the same environment
+* In new tab/terminal:
 * `conda activate ADRdemo`
 
-### Draai herkenningsmodel
+### Run recognitionmodel
 * `python ADRmodel.py --model ADRmodel.tflite --labels ADRlabels.txt --output ADRoutput.csv --mode ADR`
-* Auto's gaan rijden en webcamscherm opent. Indien auto's met meer dan 90% zekerheid herkent worden, worden de resultaten in ADRoutput.csv weggeschreven en gevisualiseerd in het streamlit dashboard.
+* Cars start driving and webcamscreen opens. If labels are recognized with more than 90% certainty, the results are stored in ADRoutput.csv and visualized in the streamlit dashboard.
 
-### Of draai object herkenningsmodel
+### Or run object detection model
 *`python ADRmodel.py --model ADRmodel.tflite --labels ADRlabels.txt --output ADRoutput.csv --mode object`
 
-### Eventueel inputspeed aanpassen met --input_speed XXX
-* XXX is een integer tussen de 200 en 800. Regelt de snelheid van de auto's
+### Inputspeed can be set with --input_speed XXX
+* XXX is an integer between 200 en 800. Determines speed of the cars.
 
-### Open streamlit in de andere tab
+### Open streamlit in other tab
 * `streamlit run ADRstreamlit.py`
-* Eventueel latlon coordinaten aanpassen als demo niet in Utrecht gedraaid wordt.
-* werkt het beste in firefox merk ik
+* Latlon coordinates can be changed if the demo is not in Utrecht
+* Runs best in Firefox
 
-### Opbouwen racebaan
-* Maak een 'ovaal' van 2x 2 rechte stukken afgewisseld door 2x 2 bochten aan elkaar. Rondje begint met recht stuk 34 (start/finish), daarna recht stuk 39, 2x bocht 20, recht stuk 36, recht stuk 40 en 2 bochten 18. Brug met webcam op het einde van de laatste bocht 20 en het begin van rechte stuk 36. Webcam gericht op het rechte stuk. Auto's in dezelfde richting laten rijden als hierboven beschreven. 
-
-
-
-
-
-
-
+### Building of track
+* Make an 'oval' track with 2x 2 straight pieces with 2x 2 corner pieces. Track starts with straight piece 34 (start/finish), then straight piece 39, 2x corner 20, straigh 36, straight 40 and 2 corner 18. Bridge with webcam at the end of the second corner 20 and the beginning of the straight 36. Point webcam to straight piece. Cars should drive in the same direction as track layout above.
