@@ -8,6 +8,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import pandas as pd
 import numpy as np
+import matplotlib.cm
 
 from dash_project_functions import get_color, get_linewidth, determine_bbox, read_input_csv
 
